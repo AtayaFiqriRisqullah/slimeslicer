@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Fixed Run Animation_0: -345138983298556972
+      Fixed Run Animation_1: 8861701647009829714
+      Fixed Run Animation_2: 6814400893337702170
+      Fixed Run Animation_3: -5183149649574116696
+      Fixed Run Animation_4: -801835414446222008
+      Fixed Run Animation_5: -6276137432308924586
+      Fixed Run Animation_6: 8188262424741754783
+      Fixed Run Animation_7: -961641368013159496
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
