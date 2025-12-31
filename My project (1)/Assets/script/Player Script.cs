@@ -5,7 +5,7 @@ public class PlayerScript : MonoBehaviour
 {
     [Header("Controller")]
     [SerializeField]private float horizontal = 0f;
-    [SerializeField] private float speed = 16f;
+    [SerializeField] private float speed = 6f;
     [SerializeField] private float jumpingPower = 24f;
 
     [Header("Dash Settings")]
@@ -79,6 +79,15 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetButtonUp("Jump") && rb.linearVelocityY > 0f)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocityX, rb.linearVelocityY * 0.5f);
+        }
+
+        if(isGrounded())
+        {
+            speed = 4f;
+        }
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = 10f;
         }
 
         flip();
@@ -185,6 +194,10 @@ public class PlayerScript : MonoBehaviour
         stamina -= dashCost;
         if (stamina < 0) stamina = 0;
         yield return new WaitForSeconds(dashingTime);
+        if (!isGrounded())
+        {
+            speed = 10f;
+        }
         tr.emitting = false;
         rb.gravityScale = originalGravity;
         isDashing = false;
